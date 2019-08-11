@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fair Trade Coffee</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Fair Trade Coffee</h1>
+        <hr>
+        <p style="text-align: center;">Prove the authenticity of coffee using the Ethereum blockchain.</p>
+    </div>
+
+    <div id="ftc-harvest">
+        <h2>Product Overview</h2>
+        <div class="form-group">
+            SKU
+            <br>
+            <input class="input-field" type="number" id="sku" name="sku" value=1><br>
+            UPC
+            <br>
+            <input type="number" id="upc" name="upc" value=1><br>
+            Current Owner ID
+            <br>
+            <input type="text" id="ownerID" name="ownerID" value="0xd112ccdfefb60b37505f482f6d471e2d7137eda6" size="50"><br>
+            <div class=button-div>
+                <button class="btn-fetchOne" id="button" type="button" data-id="11">Fetch Data 1</button>
+                <button class="btn-fetchTwo" id="button" type="button" data-id="12">Fetch Data 2</button>
+            </div>
+        </div>
+        <div class=form-break></div>
+        <h2>Vineyard Details</h2>
+        <div class="form-group">
+            GrapeGrower ID
+            <br>
+            <input type="text" id="originGrapeGrowerID" name="originGrapeGrowerID" value="0xe92305e6a629813a748eeed4db7f1fbeb7e32ce8"
+                size="50"><br>
+            Vineyard Name
+            <br>
+            <input type="text" id="originVineyardName" name="originVineyardName" value="John Doe"><br>
+            Vineyard Information
+            <br>
+            <input type="text" id="originVineyardInformation" name="originVineyardInformation" value="Yarra Valley"><br>
+            Vineyard Latitude
+            <br>
+            <input type="text" id="originVineyardLatitude" name="originVineyardLatitude" value="-38.239770"><br>
+            Vineyard Longitude
+            <br>
+            <input type="text" id="originVineyardLongitude" name="originVineyardLongitude" value="144.341490"><br>
+			Producer ID
+            <br>
+            <input type="text" id="producerID" name="producerID" value="0xde9f341dc069f2384afe3b66112ca69b2fd1459d"
+                size="50">
+            <br>
+            <button class="btn-harvest" id="button" type="button" data-id="1">Harvest</button>
+            <button class="btn-process" id="button" type="button" data-id="2">ReceiveGrapes</button>
+            <button class="btn-pack" id="button" type="button" data-id="3">Produce</button>
+			<button class="btn-pack" id="button" type="button" data-id="4">Stock</button>
+			<button class="btn-pack" id="button" type="button" data-id="5">BottleUp</button>
+            <button class="btn-forsale" id="button" type="button" data-id="6">ForSale</button>
+        </div>
+        <div class=form-break></div>
+        <h2>Product Details</h2>
+        <div class="form-group">
+            Product Notes
+            <br>
+            <input type="text" id="productNotes" name="productNotes" value="Best wine" size="60"><br>
+            Product Price
+            <br>
+            <input type="number" id="productPrice" name="productPrice" value=1>ETH<br>
+            Distributor ID
+            <br>
+            <input type="text" id="distributorID" name="distributorID" value="0xde9f341dc069f2384afe3b66112ca69b2fd1459d "
+                size="50">
+            <br>
+            Retailer ID
+            <br>
+            <input type="text" id="retailerID" name="retailerID" value="0x5135e1c60ec301e5265c1e28be6bdb8972690e97 "
+                size="50"><br>
+            Distributor ID
+            <br>
+            <input type="text" id="consumerID" name="consumerID" value="0x91dccf1b8ced8ebd84a5aefe2b286b93a7d6d2ef "
+                size="50"><br>
+            <br>
+            <button class="btn-buy" id="button" type="button" data-id="7">Buy</button>
+            <button class="btn-ship" id="button" type="button" data-id="8">Ship</button>
+            <button class="btn-receive" id="button" type="button" data-id="9">Receive</button>
+            <button class="btn-purchase" id="button" type="button" data-id="10">Purchase</button>
+        </div>
+        <div class=form-break></div>
+        <hr>
+    </div>
+
+    <h2>Transaction History<span id="ftc-history"></span></h2>
+    <div>
+        <ul id="ftc-events">
+            <!-- Events will appear here from app.js -->
+        </ul>
+        <br>
+        <hr>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="js/web3.min.js"></script> -->
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
