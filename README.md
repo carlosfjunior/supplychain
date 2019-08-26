@@ -10,6 +10,49 @@ These instructions will get you a copy of the project up and running on your loc
 
 Please make sure you've already installed ganache-cli, Truffle and enabled MetaMask extension in your browser.
 
+### Installing
+
+A step by step series of examples that tell you have to get a development env running
+
+Clone this repository:
+
+```
+git clone https://github.com/carlosfjunior/supplychain.git
+```
+
+Change directory to ```supplychain``` folder and install all requisite npm packages (as listed in ```package.json```):
+
+```
+cd supplychain
+npm install
+```
+
+Launch Ganache:
+
+```
+ganache-cli -m "gap connect jealous champion video protect half concert warrior wing raven armed"
+```
+
+In a separate terminal window, Compile smart contracts:
+
+```
+truffle compile
+```
+
+This will create the smart contract artifacts in folder ```build\contracts```.
+
+Migrate smart contracts to the locally running blockchain, ganache-cli:
+
+```
+truffle migrate
+```
+
+Test smart contracts:
+
+```
+truffle test
+```
+
 ## Built With
 
 * [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
