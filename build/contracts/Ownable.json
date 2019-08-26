@@ -81,9 +81,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\r\n\r\n/// Provides basic authorization control\r\ncontract Ownable {\r\n    address private origOwner;\r\n\r\n    // Define an Event\r\n    event TransferOwnership(address indexed oldOwner, address indexed newOwner);\r\n\r\n    /// Assign the contract to an owner\r\n    constructor () internal {\r\n        origOwner = msg.sender;\r\n        emit TransferOwnership(address(0), origOwner);\r\n    }\r\n\r\n    /// Look up the address of the owner\r\n    function getOwner() public view returns (address) {\r\n        return origOwner;\r\n    }\r\n\r\n    /// Define a function modifier 'onlyOwner'\r\n    modifier onlyOwner() {\r\n        require(isOwner());\r\n        _;\r\n    }\r\n\r\n    /// Check if the calling address is the owner of the contract\r\n    function isOwner() public view returns (bool) {\r\n        return msg.sender == origOwner;\r\n    }\r\n\r\n    /// Define a function to renounce ownerhip\r\n    function renounceOwnership() public onlyOwner {\r\n        emit TransferOwnership(origOwner, address(0));\r\n        origOwner = address(0);\r\n    }\r\n\r\n    /// Define a public function to transfer ownership\r\n    function transferOwnership(address newOwner) public onlyOwner {\r\n        _transferOwnership(newOwner);\r\n    }\r\n\r\n    /// Define an internal function to transfer ownership\r\n    function _transferOwnership(address newOwner) internal {\r\n        require(newOwner != address(0));\r\n        emit TransferOwnership(origOwner, newOwner);\r\n        origOwner = newOwner;\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\Carlos\\nd1309-Project-6b-Example-Template\\project-6\\contracts\\core\\Ownable.sol",
+  "sourcePath": "C:\\Users\\Carlos\\OneDrive\\Documentos\\supplychain\\supplychain\\contracts\\core\\Ownable.sol",
   "ast": {
-    "absolutePath": "/C/Users/Carlos/nd1309-Project-6b-Example-Template/project-6/contracts/core/Ownable.sol",
+    "absolutePath": "/C/Users/Carlos/OneDrive/Documentos/supplychain/supplychain/contracts/core/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         2334
@@ -1445,7 +1445,7 @@
     "src": "0:1463:14"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/Carlos/nd1309-Project-6b-Example-Template/project-6/contracts/core/Ownable.sol",
+    "absolutePath": "/C/Users/Carlos/OneDrive/Documentos/supplychain/supplychain/contracts/core/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         2334
@@ -2812,5 +2812,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-07-22T02:45:49.649Z"
+  "updatedAt": "2019-08-25T03:00:08.268Z"
 }
